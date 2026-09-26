@@ -1,12 +1,23 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
+        if(s.length() != t.length()) return false;
 
-        if(s == t) {
-            return true;
+       int count_s[26] = {0};
+       int count_t[26] = {0};
+
+       for(int i=0;i<s.length();i++){
+        count_s[s[i] - 'a']++;
+        count_t[t[i] - 'a']++;
+       }
+
+       for(int i=0;i<26;i++){
+        if(count_s[i] != count_t[i]){
+            return false;
         }
-        return false;
+        
+       }
+
+       return true;
     }
 };

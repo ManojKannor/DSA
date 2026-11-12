@@ -18,10 +18,6 @@ public:
             j++;
         }
 
-        if(minmal == INT_MAX){
-            return 0;
-        }
-
-        return minmal;
+        return (minmal == INT_MAX) ? 0 : minmal;
     }
 };
